@@ -17,7 +17,7 @@ import java.util.List;
 import com.javaworld.hotels.businessobjects.Hotel;
 
 /**
- * 
+ *
  * @author jfsmart
  *
  * A simple class providing lookup services for a Hotel database.
@@ -32,7 +32,7 @@ public class HotelModel {
 		"Paris",
 		"London",
 	};
-	
+
 	/**
 	 * The list of all hotels in the database.
 	 */
@@ -42,8 +42,9 @@ public class HotelModel {
 		new Hotel("Hotel Vendome","Place Vendome","Paris",5),
 		new Hotel("Hotel Hilton","Trafalgar Square","London",4),
 		new Hotel("Hotel Ibis","The City","London",3),
+		new Hotel("Hotel Cigogne","Grand place","",2)
 	};
-	
+
 	/**
 	 * Returns the hotels in a given city.
 	 * @param city the name of the city
@@ -51,18 +52,18 @@ public class HotelModel {
 	 */
 	public List<Hotel> findHotelsByCity(String city){
 		List<Hotel> hotelsFound = new ArrayList<Hotel>();
-		
+
 		for(Hotel hotel : hotels) {
 			if (hotel.getCity().equalsIgnoreCase(city)) {
 				hotelsFound.add(hotel);
 			}
 		}
-		
+
 		return hotelsFound;
-	}	
-	
+	}
+
 	/**
-	 * Returns the list of cities in the database which have a hotel. 
+	 * Returns the list of cities in the database which have a hotel.
 	 * @return a list of city names
 	 */
 	public String[] findAvailableCities() {
